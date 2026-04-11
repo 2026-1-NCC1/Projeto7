@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
 public class ClickToMove : MonoBehaviour
 {
@@ -17,35 +18,40 @@ public class ClickToMove : MonoBehaviour
     }
 
     void Update()
+{
+
+    if (currentMarker != null && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+    {
+        Destroy(currentMarker);
+        currentMarker = null;
+    }
+
+    if (Input.GetMouseButtonDown(0))
     {
 
-        if (currentMarker != null && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+        if (EventSystem.current.IsPointerOverGameObject())
         {
-            Destroy(currentMarker);
-            currentMarker = null;
+            return; 
         }
 
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+            agent.SetDestination(hit.point);
 
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer))
+            if (currentMarker != null)
             {
-                agent.SetDestination(hit.point);
+                Destroy(currentMarker);
+            }
 
-                if (currentMarker != null)
-                {
-                    Destroy(currentMarker);
-                }
-
-                if (clickMarkerPrefab != null)
-                {
-                    Vector3 markerPos = hit.point + Vector3.up * 0.01f; // evita z-fighting
-                    currentMarker = Instantiate(clickMarkerPrefab, markerPos, Quaternion.identity);
-                }
+            if (clickMarkerPrefab != null)
+            {
+                Vector3 markerPos = hit.point + Vector3.up * 0.01f;
+                currentMarker = Instantiate(clickMarkerPrefab, markerPos, Quaternion.identity);
             }
         }
     }
+}
 }
