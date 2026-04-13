@@ -17,7 +17,7 @@
 ## Descrição
 
 <p align="center">
-<img src="POINT & MINE.png" alt="Banner DelShift" border="0">
+<img src="Imagens/POINT & MINE.png" alt="Banner DelShift" border="0">
 </p>
 
 
