@@ -1,0 +1,14 @@
+C:\Users\lucas\Desktop\entrega_logica_programacao_PI\bin\Debug\net10.0\entrega_logica_programacao_PI.exe
+C:\Users\lucas\Desktop\entrega_logica_programacao_PI\bin\Debug\net10.0\entrega_logica_programacao_PI.deps.json
+C:\Users\lucas\Desktop\entrega_logica_programacao_PI\bin\Debug\net10.0\entrega_logica_programacao_PI.runtimeconfig.json
+C:\Users\lucas\Desktop\entrega_logica_programacao_PI\bin\Debug\net10.0\entrega_logica_programacao_PI.dll
+C:\Users\lucas\Desktop\entrega_logica_programacao_PI\bin\Debug\net10.0\entrega_logica_programacao_PI.pdb
+C:\Users\lucas\Desktop\entrega_logica_programacao_PI\obj\Debug\net10.0\entrega_logica_programacao_PI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucas\Desktop\entrega_logica_programacao_PI\obj\Debug\net10.0\entrega_logica_programacao_PI.AssemblyInfoInputs.cache
+C:\Users\lucas\Desktop\entrega_logica_programacao_PI\obj\Debug\net10.0\entrega_logica_programacao_PI.AssemblyInfo.cs
+C:\Users\lucas\Desktop\entrega_logica_programacao_PI\obj\Debug\net10.0\entrega_logica_programacao_PI.csproj.CoreCompileInputs.cache
+C:\Users\lucas\Desktop\entrega_logica_programacao_PI\obj\Debug\net10.0\entrega_logica_programacao_PI.dll
+C:\Users\lucas\Desktop\entrega_logica_programacao_PI\obj\Debug\net10.0\refint\entrega_logica_programacao_PI.dll
+C:\Users\lucas\Desktop\entrega_logica_programacao_PI\obj\Debug\net10.0\entrega_logica_programacao_PI.pdb
+C:\Users\lucas\Desktop\entrega_logica_programacao_PI\obj\Debug\net10.0\entrega_logica_programacao_PI.genruntimeconfig.cache
+C:\Users\lucas\Desktop\entrega_logica_programacao_PI\obj\Debug\net10.0\ref\entrega_logica_programacao_PI.dll
