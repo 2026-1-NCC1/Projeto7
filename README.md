@@ -17,7 +17,7 @@
 ## Descrição
 
 <p align="center">
-<img src="POINT & MINE.png" alt="Banner DelShift" border="0">
+<img src="Imagens/POINT & MINE.png" alt="Banner DelShift" border="0">
 </p>
 
 
@@ -32,7 +32,6 @@ Point&Mine é um jogo no estilo clicker/gestão de recursos, que parte de uma pr
   &emsp;|Documentação.docx<br>
 |-->executáveis<br>
   &emsp;|-->windows<br>
-  &emsp;|-->HTML<br>
 |-->imagens<br>
 |-->src<br>
   &emsp;|-->Backend<br>
