@@ -12,6 +12,13 @@ public class ItemQuebravel : MonoBehaviour
     private Transform player;
     private bool esperandoJogador = false; // Flag para controlar se o clique já foi feito
 
+    public GameObject itemDropPrefab;
+    public int quantidadeVidaDrop = 1;
+
+    public int valorDrop = 1;
+    public int minDrop = 1;
+    public int maxDrop = 3;
+
     void Start()
     {
         // Busca o objeto do jogador pela Tag "Player" no início do jogo.
@@ -54,5 +61,45 @@ public class ItemQuebravel : MonoBehaviour
 
         // Ativa o estado de espera para que o Update comece a monitorar a distância.
         esperandoJogador = true;
+    }
+
+    public void DropItem()
+    {
+        if(itemDropPrefab != null)
+        {
+            //posição que vai dropar o item
+            Vector3 offset = new Vector3(
+                Random.Range(0.8f, 1.5f),
+                0,
+                Random.Range(0.8f, 1.5f)
+            );
+
+            //drop do item
+            GameObject drop = Instantiate(
+                itemDropPrefab,
+                transform.position + offset,
+                Quaternion.identity
+            );
+
+            Rigidbody rb = drop.GetComponent<Rigidbody>();
+
+            if (rb != null)
+            {
+                Vector3 forca = new Vector3(
+                    Random.Range(-1f, 1f),
+                    Random.Range(2f, 4f), // altura do pulo
+                    Random.Range(-1f, 1f)
+                );
+
+                rb.AddForce(forca, ForceMode.Impulse);
+            }
+
+            ItemDrop itemDrop = drop.GetComponent<ItemDrop>();
+
+            if (itemDrop != null)
+            {
+                itemDrop.valor = valorDrop;
+            }
+        }
     }
 }
