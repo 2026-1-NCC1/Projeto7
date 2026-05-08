@@ -4,8 +4,6 @@ using UnityEngine.EventSystems;
 // Classe responsável por gerenciar o comportamento de um item que pode ser quebrado pelo jogador.
 public class ItemQuebravel : MonoBehaviour
 {
-    public static ItemQuebravel instance;
-
     [Header("Configurações do Item")]
    
     public string nomeItem;

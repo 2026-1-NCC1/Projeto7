@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class ItemDrop : MonoBehaviour
 {
-    public static ItemDrop instance;
-
-    public int min = ItemQuebravel.instance.minDrop;
-    public int max = ItemQuebravel.instance.maxDrop;
+    public int max;
+    public int min;
 
     public int valor;
 
@@ -22,7 +20,6 @@ public class ItemDrop : MonoBehaviour
 
     void Start()
     {
-        valor = UnityEngine.Random.Range(min, max);
         rb = GetComponent<Rigidbody>();
 
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
