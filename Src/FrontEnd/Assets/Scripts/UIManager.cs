@@ -78,7 +78,7 @@ public class UIManager : MonoBehaviour
         }
 
         // Comunicação entre scripts: busca o Spawner e pede um novo item
-        SpawnerManager spawner = FindObjectOfType<SpawnerManager>();
+        SpawnerManager spawner = FindFirstObjectByType<SpawnerManager>();
         if(spawner != null) 
         {
             spawner.GerarUmNovoItem();

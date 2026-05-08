@@ -4,20 +4,23 @@ using UnityEngine.EventSystems;
 // Classe responsável por gerenciar o comportamento de um item que pode ser quebrado pelo jogador.
 public class ItemQuebravel : MonoBehaviour
 {
+    public static ItemQuebravel instance;
+
     [Header("Configurações do Item")]
+   
     public string nomeItem;
-    public int vidaMaxima = 10;
+    public int vidaMaxima;
     public Sprite iconeGrande; // Ícone que será exibido na UI (interface)
     
     private Transform player;
     private bool esperandoJogador = false; // Flag para controlar se o clique já foi feito
 
     public GameObject itemDropPrefab;
-    public int quantidadeVidaDrop = 1;
+    public int quantidadeVidaDrop;
 
-    public int valorDrop = 1;
-    public int minDrop = 1;
-    public int maxDrop = 3;
+    public int valorDrop;
+    public int minDrop;
+    public int maxDrop;
 
     void Start()
     {

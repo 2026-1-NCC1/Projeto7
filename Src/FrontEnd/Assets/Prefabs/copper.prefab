@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5121889070464571027}
   - component: {fileID: 3159742356597357461}
   m_Layer: 0
-  m_Name: rock
+  m_Name: copper
   m_TagString: SpawnPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b1a0bafa934fec43897440fabc62e44, type: 2}
+  - {fileID: 2100000, guid: 0a2aab443fa825944b35a3511a51ab64, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -138,11 +138,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5737601f242c2564298ffb3aacd209cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nomeItem: Pedra
-  vidaMaxima: 10
+  nomeItem: Ametista
+  vidaMaxima: 15
   iconeGrande: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   itemDropPrefab: {fileID: 513502175269215097, guid: bdf96d666af7f694b80754138acfc29f, type: 3}
   quantidadeVidaDrop: 1
-  valorDrop: 1
-  minDrop: 1
-  maxDrop: 3
+  valorDrop: 5
+  minDrop: 3
+  maxDrop: 9

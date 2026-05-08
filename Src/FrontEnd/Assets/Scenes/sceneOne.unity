@@ -1940,11 +1940,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 548584540}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -65.4, y: 89.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 25, y: -25}
   m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &870853396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1965,7 +1965,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'dinheiro:'
+  m_text: 'Dinheiro:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3152,11 +3152,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 548584540}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.1, y: 88.3}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -25}
   m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1696485850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3951,6 +3951,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itensParaGerar:
   - {fileID: 5692573169202944380, guid: 87bcc779167f06143bd961320db15bd3, type: 3}
+  - {fileID: 5692573169202944380, guid: facf88bfcbe9c904a8f74eebcee7a051, type: 3}
+  - {fileID: 5692573169202944380, guid: 73d7a2cd680e05f45ad8f363c331235c, type: 3}
   quantidadeTotal: 12
 --- !u!4 &2092899991
 Transform:

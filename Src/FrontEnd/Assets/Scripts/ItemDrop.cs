@@ -1,9 +1,15 @@
 using System;
+using System.Data;
 using UnityEngine;
 
 public class ItemDrop : MonoBehaviour
 {
-    public int valor = 0;
+    public static ItemDrop instance;
+
+    public int min = ItemQuebravel.instance.minDrop;
+    public int max = ItemQuebravel.instance.maxDrop;
+
+    public int valor;
 
     public float velocidadeRotacao = 100f;
     public float velocidadeAtracao = 5f;
@@ -16,7 +22,7 @@ public class ItemDrop : MonoBehaviour
 
     void Start()
     {
-        valor = UnityEngine.Random.Range(1, 3);
+        valor = UnityEngine.Random.Range(min, max);
         rb = GetComponent<Rigidbody>();
 
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
