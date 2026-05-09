@@ -20,6 +20,8 @@ public class ItemQuebravel : MonoBehaviour
     public int minDrop;
     public int maxDrop;
 
+    private PlayerStamina stamina;
+
     void Start()
     {
         // Busca o objeto do jogador pela Tag "Player" no início do jogo.
@@ -27,6 +29,7 @@ public class ItemQuebravel : MonoBehaviour
         if (playerObj != null)
         {
             player = playerObj.transform;
+            stamina = playerObj.GetComponent<PlayerStamina>();
         }
     }
 
@@ -52,17 +55,26 @@ public class ItemQuebravel : MonoBehaviour
 
     // Método nativo da Unity chamado quando o objeto recebe um clique de mouse (ou toque).
     private void OnMouseDown()
+{
+    if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) 
     {
-        // Verifica se o clique foi sobre um elemento de UI (botões, painéis etc.).
-        // Isso impede que o jogador clique no item "através" de um menu aberto.
-        if (EventSystem.current.IsPointerOverGameObject()) 
-        {
-            return; 
-        }
-
-        // Ativa o estado de espera para que o Update comece a monitorar a distância.
-        esperandoJogador = true;
+        return; 
     }
+
+    if (stamina == null)
+    {
+        Debug.LogWarning("PlayerStamina nao encontrado no ItemQuebravel.");
+        return;
+    }
+
+    if (!stamina.TryUseStamina(1))
+    {
+        Debug.Log("Sem stamina para interagir com o item.");
+        return;
+    }
+
+    esperandoJogador = true;
+}
 
     public void DropItem()
     {
