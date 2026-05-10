@@ -13,9 +13,6 @@ public class SpawnerManager : MonoBehaviour
         GerarItens();    
     }
 
-    /// <summary>
-    /// Gera vários itens no início, garantindo que cada um use um SpawnPoint diferente.
-    /// </summary>
     void GerarItens()
     {
         // Busca todos os objetos na cena que tenham a tag "SpawnPoint"

@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "point-and-mine.sln"
+    "dotnet.defaultSolution": "FrontEnd.sln"
 }

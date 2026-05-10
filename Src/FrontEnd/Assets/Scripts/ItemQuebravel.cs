@@ -5,19 +5,22 @@ using UnityEngine.EventSystems;
 public class ItemQuebravel : MonoBehaviour
 {
     [Header("Configurações do Item")]
+   
     public string nomeItem;
-    public int vidaMaxima = 10;
+    public int vidaMaxima;
     public Sprite iconeGrande; // Ícone que será exibido na UI (interface)
     
     private Transform player;
     private bool esperandoJogador = false; // Flag para controlar se o clique já foi feito
 
     public GameObject itemDropPrefab;
-    public int quantidadeVidaDrop = 1;
+    public int quantidadeVidaDrop;
 
-    public int valorDrop = 1;
-    public int minDrop = 1;
-    public int maxDrop = 3;
+    public int valorDrop;
+    public int minDrop;
+    public int maxDrop;
+
+    private PlayerStamina stamina;
 
     void Start()
     {
@@ -26,6 +29,7 @@ public class ItemQuebravel : MonoBehaviour
         if (playerObj != null)
         {
             player = playerObj.transform;
+            stamina = playerObj.GetComponent<PlayerStamina>();
         }
     }
 
@@ -51,17 +55,26 @@ public class ItemQuebravel : MonoBehaviour
 
     // Método nativo da Unity chamado quando o objeto recebe um clique de mouse (ou toque).
     private void OnMouseDown()
+{
+    if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) 
     {
-        // Verifica se o clique foi sobre um elemento de UI (botões, painéis etc.).
-        // Isso impede que o jogador clique no item "através" de um menu aberto.
-        if (EventSystem.current.IsPointerOverGameObject()) 
-        {
-            return; 
-        }
-
-        // Ativa o estado de espera para que o Update comece a monitorar a distância.
-        esperandoJogador = true;
+        return; 
     }
+
+    if (stamina == null)
+    {
+        Debug.LogWarning("PlayerStamina nao encontrado no ItemQuebravel.");
+        return;
+    }
+
+    if (!stamina.TryUseStamina(1))
+    {
+        Debug.Log("Sem stamina para interagir com o item.");
+        return;
+    }
+
+    esperandoJogador = true;
+}
 
     public void DropItem()
     {

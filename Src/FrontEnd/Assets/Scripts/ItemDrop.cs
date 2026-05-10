@@ -1,9 +1,13 @@
 using System;
+using System.Data;
 using UnityEngine;
 
 public class ItemDrop : MonoBehaviour
 {
-    public int valor = 0;
+    public int max;
+    public int min;
+
+    public int valor;
 
     public float velocidadeRotacao = 100f;
     public float velocidadeAtracao = 5f;
@@ -16,7 +20,6 @@ public class ItemDrop : MonoBehaviour
 
     void Start()
     {
-        valor = UnityEngine.Random.Range(1, 3);
         rb = GetComponent<Rigidbody>();
 
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
