@@ -18,6 +18,10 @@ public class UIManager : MonoBehaviour
     public int dinheiro = 0;
     public TextMeshProUGUI textoDinheiro;
 
+    [Header("Picareta")]
+    public int nivelPicareta = 1;
+    public int danoPicareta = 1;
+
     private ItemQuebravel itemAtual;
     private int vidaAtual;
 
@@ -65,7 +69,7 @@ public class UIManager : MonoBehaviour
             return;
         }
 
-        vidaAtual--;
+        vidaAtual -= danoPicareta;
         barraVida.value = vidaAtual;
 
         if (vidaAtual <= 0)
@@ -105,5 +109,13 @@ public class UIManager : MonoBehaviour
         {
             textoDinheiro.text = "$ " + dinheiro.ToString();
         }
+    }
+    public void MelhorarPicareta()
+    {
+        nivelPicareta++;
+        danoPicareta++;
+
+        Debug.Log("Picareta melhorada! Nivel: " + nivelPicareta +
+                  " | Dano: " + danoPicareta);
     }
 }
