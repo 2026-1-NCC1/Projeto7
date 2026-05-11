@@ -981,7 +981,7 @@ MonoBehaviour:
   imagemPedraGrande: {fileID: 2094637436}
   barraVida: {fileID: 1634741598}
   stamina: {fileID: 1209361876}
-  dinheiro: 2000
+  dinheiro: 0
   textoDinheiro: {fileID: 1696485850}
   nivelPicareta: 1
   danoPicareta: 1
@@ -3944,7 +3944,7 @@ MonoBehaviour:
   gameplayCamera: {fileID: 1920162300}
   cutsceneCamera: {fileID: 1583380669}
   velocidadeBarco: 6
-  duracaoMovimento: 6
+  duracaoMovimento: 10
   direcao: {x: -1, y: 0, z: 0}
 --- !u!4 &734383890 stripped
 Transform:
