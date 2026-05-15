@@ -2636,6 +2636,7 @@ Transform:
   - {fileID: 1506746449}
   - {fileID: 1851184611}
   - {fileID: 1354390091}
+  - {fileID: 1516729650}
   m_Father: {fileID: 1800510847}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &485121356
@@ -5339,6 +5340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b31bb2eee4b4e4e987df5c65460ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pontoDeInteracao: {fileID: 0}
 --- !u!208 &905466463
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5717,6 +5719,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8479685716264086232, guid: 0d2351610d0bb0345a3a09c5331602e9, type: 3}
   m_PrefabInstance: {fileID: 501674413}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1034942788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1034942789}
+  m_Layer: 0
+  m_Name: pontoDeInteracao
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1034942789
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034942788}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -14.79, y: 0.64389753, z: 33.77}
+  m_LocalScale: {x: 2.3316, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1061960113 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b71ead52cb89f40c28e9495fd5ee0cbd, type: 3}
@@ -6422,7 +6455,7 @@ NavMeshAgent:
   m_Acceleration: 35
   avoidancePriority: 50
   m_AngularSpeed: 1
-  m_StoppingDistance: 0.5
+  m_StoppingDistance: 1.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -7391,6 +7424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b31bb2eee4b4e4e987df5c65460ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pontoDeInteracao: {fileID: 1516729650}
 --- !u!65 &1354390088
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7474,8 +7508,8 @@ Transform:
   m_GameObject: {fileID: 1354390086}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.1991823, y: -3.6538973, z: 40.948967}
-  m_LocalScale: {x: 6.7274027, y: 7, z: 5.749571}
+  m_LocalPosition: {x: -3.1991823, y: -3.6538973, z: 40.32}
+  m_LocalScale: {x: 8.260578, y: 7, z: 8.705303}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 483797721}
@@ -8387,6 +8421,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8479685716264086232, guid: caf8f0d264ef587439f2c3b2ad2aa153, type: 3}
   m_PrefabInstance: {fileID: 1267056471}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1516729649
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1516729650}
+  m_Layer: 0
+  m_Name: pontoDeInteracao
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1516729650
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516729649}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.71, y: -4.33, z: 35.95}
+  m_LocalScale: {x: 2.3316, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 483797721}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1519582514 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9e1a24d9330e5ae4fb8926f805b31bb8, type: 3}
@@ -8627,6 +8692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b31bb2eee4b4e4e987df5c65460ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pontoDeInteracao: {fileID: 0}
 --- !u!208 &1626626970
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -9295,6 +9361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b31bb2eee4b4e4e987df5c65460ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pontoDeInteracao: {fileID: 0}
 --- !u!208 &1728631894
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -9343,6 +9410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b31bb2eee4b4e4e987df5c65460ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pontoDeInteracao: {fileID: 0}
 --- !u!208 &1763795299
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -10057,6 +10125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f487af2a7242a854eb3991e2dcdd01d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pontoDeInteracao: {fileID: 1034942789}
 --- !u!208 &1927611047
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -11728,5 +11797,6 @@ SceneRoots:
   - {fileID: 1087791318}
   - {fileID: 548584540}
   - {fileID: 318142582}
+  - {fileID: 1034942789}
   - {fileID: 475736718}
   - {fileID: 1147762018}

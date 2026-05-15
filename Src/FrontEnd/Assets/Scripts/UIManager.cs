@@ -113,7 +113,7 @@ public class UIManager : MonoBehaviour
     public void MelhorarPicareta()
     {
         nivelPicareta++;
-        danoPicareta++;
+        danoPicareta += 2;
 
         Debug.Log("Picareta melhorada! Nivel: " + nivelPicareta +
                   " | Dano: " + danoPicareta);

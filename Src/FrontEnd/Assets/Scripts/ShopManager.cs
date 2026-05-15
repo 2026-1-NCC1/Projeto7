@@ -16,21 +16,21 @@ public class ShopManager : MonoBehaviour
     public TextMeshProUGUI textoBotaoPicareta;
 
     private int custoPicareta = 10;
-    private int nivelMaxPicareta = 5;
+    private int nivelMaxPicareta = 10;
 
     [Header("Stamina Upgrade")]
     public Button botaoStamina;
     public TextMeshProUGUI textoBotaoStamina;
 
     private int custoStamina = 25;
-    private int nivelMaxUpgradeStamina = 5;
+    private int nivelMaxUpgradeStamina = 10;
 
     [Header("Regen Upgrade")]
     public Button botaoRegen;
     public TextMeshProUGUI textoBotaoRegen;
 
     private int custoRegen = 50;
-    private int nivelMaxUpgradeRegen = 5;
+    private int nivelMaxUpgradeRegen = 10;
 
     void Awake() => instance = this;
 
@@ -119,7 +119,7 @@ public class ShopManager : MonoBehaviour
         {
             UIManager.instance.AdicionarDinheiro(-custoRegen);
 
-            playerStamina.MelhorarRegen(0.05f);
+            playerStamina.MelhorarRegen(0.1f);
 
             custoRegen = Mathf.RoundToInt(custoRegen * 1.5f);
 

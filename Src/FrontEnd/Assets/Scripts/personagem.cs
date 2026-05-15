@@ -16,20 +16,58 @@ public class ClickToMove : MonoBehaviour
     public GameObject clickMarkerPrefab;
     private GameObject currentMarker;
 
+    [Header("Loja")]
+    private Loja lojaAtual;
+    private bool indoParaLoja;
+
+    [Header("workbench")]
+    private Workbench workbenchAtual;
+    private bool indoParaWorkbench;
+
     void Start()
     {
-    agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
 
-    if (stamina == null)
-        stamina = GetComponent<PlayerStamina>();
+        if (stamina == null)
+            stamina = GetComponent<PlayerStamina>();
 
-    if (groundLayer == 0)
-        groundLayer = LayerMask.GetMask("Default");
+        if (groundLayer == 0)
+            groundLayer = LayerMask.GetMask("Default");
     }
 
     void Update()
     {
-        if (currentMarker != null && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+        if (indoParaLoja)
+        {
+            if (!agent.pathPending &&
+                agent.remainingDistance <= agent.stoppingDistance)
+            {
+                indoParaLoja = false;
+
+                if (lojaAtual != null)
+                {
+                    lojaAtual.Abrir();
+                }
+            }
+        }
+
+        if (indoParaWorkbench)
+        {
+            if (!agent.pathPending &&
+                agent.remainingDistance <= agent.stoppingDistance)
+            {
+                indoParaWorkbench = false;
+
+                if (workbenchAtual != null)
+                {
+                    workbenchAtual.Abrir();
+                }
+            }
+        }
+     
+        if (currentMarker != null &&
+            !agent.pathPending &&
+            agent.remainingDistance <= agent.stoppingDistance)
         {
             Destroy(currentMarker);
             currentMarker = null;
@@ -37,9 +75,21 @@ public class ClickToMove : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+            if (EventSystem.current != null &&
+                EventSystem.current.IsPointerOverGameObject())
             {
                 return;
+            }
+
+            Ray lojaRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(lojaRay, out RaycastHit lojaHit))
+            {
+                if (lojaHit.collider.GetComponentInParent<Loja>() != null ||
+                    lojaHit.collider.GetComponentInParent<Workbench>() != null)
+                {
+                    return;
+                }
             }
 
             if (stamina == null)
@@ -57,10 +107,12 @@ public class ClickToMove : MonoBehaviour
             Debug.Log("Clique consumiu 1 de stamina.");
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer))
+            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, groundLayer))
             {
+                indoParaLoja = false;
+                lojaAtual = null;
+
                 agent.SetDestination(hit.point);
 
                 if (currentMarker != null)
@@ -71,9 +123,34 @@ public class ClickToMove : MonoBehaviour
                 if (clickMarkerPrefab != null)
                 {
                     Vector3 markerPos = hit.point + Vector3.up * 0.01f;
-                    currentMarker = Instantiate(clickMarkerPrefab, markerPos, Quaternion.identity);
+
+                    currentMarker = Instantiate(
+                        clickMarkerPrefab,
+                        markerPos,
+                        Quaternion.identity
+                    );
                 }
             }
         }
+    }
+    public void IrParaLoja(Loja loja)
+    {
+        if (loja == null || loja.pontoDeInteracao == null)
+            return;
+
+        lojaAtual = loja;
+        indoParaLoja = true;
+
+        agent.SetDestination(loja.pontoDeInteracao.position);
+    }
+    public void IrParaWorkbench(Workbench workbench)
+    {
+        if (workbench == null || workbench.pontoDeInteracao == null)
+            return;
+
+        workbenchAtual = workbench;
+        indoParaWorkbench = true;
+
+        agent.SetDestination(workbench.pontoDeInteracao.position);
     }
 }
